@@ -31,10 +31,11 @@ pipeline {
          }
        }
      }
-     stage('Docker Build') {
-    	 agent any
+	   stage('Docker Build') {
         steps {
-      	   sh 'docker build -t docker:latest .'
+      	    containers:
+            - name: jnlp
+              image: jenkins/inbound-agent:windowsservercore-ltsc2019
        }
      }
    }
