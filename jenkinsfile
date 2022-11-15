@@ -34,7 +34,7 @@ pipeline {
 	 stage('docker Build image') {
 	   steps {
 	      containers:
-             - name:jnlp
+                 - name:jnlp
        }
      }
    }
