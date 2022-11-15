@@ -27,9 +27,15 @@ pipeline {
     stage('Run docker') {
       steps {
         container('docker') {
-          sh 'echo ls'
-        }
-      }
-    }
-  }
-}
+          sh 'echo ls'	
+	
+         }
+       }
+     }
+	 stage('Build image') {
+	   steps {
+	     sh 'docker build -t mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019 .'
+       }
+     }
+   }
+ }
