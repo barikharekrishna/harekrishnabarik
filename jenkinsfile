@@ -35,10 +35,10 @@ pipeline {
 	 stage('docker Build image') {
 	   steps {
 	      containers:
-             - name: jnlp
-               image: jenkins/inbound-agent:windowsservercore-1809
-             - name: shell
-               image: mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
+               - name: jnlp
+                 image: jenkins/inbound-agent:windowsservercore-1809
+               - name: shell
+                 image: mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
        }
      }
    }
