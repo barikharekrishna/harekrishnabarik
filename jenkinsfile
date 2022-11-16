@@ -5,9 +5,9 @@ pipeline {
         apiVersion: v1
         kind: Pod
         spec:
-           containers:
-           - name: windows
-             image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
+          containers:
+          - name: docker
+            image: docker:latest
             command:
             - cat
             tty: true
@@ -24,12 +24,13 @@ pipeline {
     }
   }
   stages {
-    stage('buid') {
+    stage('build') {
       steps {
-        container('docker build') {
-          sh 'docker --version'	
-         }
-       }
-     }	   
-   }
- }
+        container('docker') {
+          sh 'echo "TEST"'
+          sh 'docker build -t.'
+        }
+      }
+    }
+  }
+}
