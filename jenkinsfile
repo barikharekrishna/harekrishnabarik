@@ -28,7 +28,7 @@ pipeline {
       steps {
         container('docker') {
           sh 'echo "TEST"'
-          sh 'docker build -t.'
+          sh 'docker build .'
         }
       }
     }
