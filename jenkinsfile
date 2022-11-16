@@ -5,9 +5,9 @@ pipeline {
         apiVersion: v1
         kind: Pod
         spec:
-          containers:
-          - name: docker
-            image: docker:latest
+           containers:
+           - name: windows
+             image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
             command:
             - cat
             tty: true
@@ -24,19 +24,12 @@ pipeline {
     }
   }
   stages {
-    stage('Run docker') {
+    stage('buid') {
       steps {
-        container('docker') {
+        container('docker build') {
           sh 'docker --version'	
          }
        }
-     }
-	   stage('Docker Build') {
-        steps {
-      	    containers:
-            - name: jnlp
-              image: jenkins/inbound-agent:windowsservercore-ltsc2019
-       }
-     }
+     }	   
    }
  }
