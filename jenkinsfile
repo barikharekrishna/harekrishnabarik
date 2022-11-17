@@ -16,6 +16,8 @@ spec:
     command:
     - cat
     tty: true
+  nodeSelector:
+    node.kubernetes.io/os: windows
 '''
         }
     }
