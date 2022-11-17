@@ -11,9 +11,11 @@ pipeline {
             command:
             - cat
             tty: true
-	  - name: shell
-            image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
-	    command:
+	  Targeting Windows
+          nodeSelector:
+           beta.kubernetes.io/os: windows
+           beta.kubernetes.io/arch: amd64
+            command:
             - cat
             tty: true  
         '''
