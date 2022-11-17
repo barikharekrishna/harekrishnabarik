@@ -1,27 +1,26 @@
+// Uses Declarative syntax to run commands inside a container.
 pipeline {
-  agent {
-    kubernetes {
-      yaml '''
-        apiVersion: v1
-        kind: Pod
-        spec:
-          containers:
-          - name: docker
-            image: docker:latest
-            command:
-            - cat
-            tty: true
-	  Targeting Windows
-          nodeSelector:
-           beta.kubernetes.io/os: windows
-           beta.kubernetes.io/arch: amd64
-            command:
-            - cat
-            tty: true  
-        '''
+    agent {
+        kubernetes {
+            yaml '''
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: docker
+    image: docker:latest
+    command:
+    - cat
+    tty: true
+  - name: shell
+    image: mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
+    command:
+    - cat
+    tty: true
+'''
+        }
     }
-  }
-  stages {
+    stages {
     stage('build') {
       steps {
         container('docker') {
