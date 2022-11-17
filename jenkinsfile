@@ -11,20 +11,11 @@ pipeline {
             command:
             - cat
             tty: true
-	    volumeMounts:
-             - name: dockersock
-               mountPath: /var/run/docker.sock
 	  - name: shell
             image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
-            command:
+	    command:
             - cat
-            tty: true
-            securityContext:
-              runAsUser: 0
-          volumes:
-          - name: dockersock
-            hostPath:
-               path: /var/run/docker.sock
+            tty: true  
         '''
     }
   }
