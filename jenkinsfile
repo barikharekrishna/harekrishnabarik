@@ -1,4 +1,3 @@
-// Uses Declarative syntax to run commands inside a container.
 pipeline {
     agent {
         kubernetes {
@@ -25,7 +24,7 @@ spec:
       steps {
         container('docker') {
           sh 'docker --version'
-          sh 'docker build -t windows-pdaja .'
+          sh 'docker build -t windows .'
         }
       }
     }
