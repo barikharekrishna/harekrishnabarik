@@ -19,8 +19,8 @@ spec:
   nodeSelector:
     node.kubernetes.io/os: windowspool
   tolerations:
-  - key: "example-key"
-    operator: "Exists"
+  - key: "node.kubernetes.io/os"
+    value: "windows"
     effect: "NoSchedule"  
 '''
         }
