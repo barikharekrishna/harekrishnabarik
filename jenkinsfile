@@ -18,6 +18,10 @@ spec:
     tty: true
   nodeSelector:
     node.kubernetes.io/os: windowspool
+  tolerations:
+  - key: "example-key"
+    operator: "Exists"
+    effect: "NoSchedule"  
 '''
         }
     }
