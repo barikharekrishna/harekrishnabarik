@@ -17,7 +17,7 @@ spec:
     - cat
     tty: true
   nodeSelector:
-    node.kubernetes.io/os: windowspool
+    node.kubernetes.io/os: windows
   tolerations:
   - key: "node.kubernetes.io/os"
     value: "windows"
