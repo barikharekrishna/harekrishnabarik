@@ -7,14 +7,11 @@ kind: Pod
 spec:
   nodeSelector:
     test: windows1
-    affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: "node.kubernetes.io/os"
-            operator: In
-            values: windows  
+  tolerations:
+  - key: "node.kubernetes.io/os"
+    operator: "Equal"
+    value: "windows"
+    effect: "NoSchedule"
   containers:
   - name: docker
     image: docker:latest
