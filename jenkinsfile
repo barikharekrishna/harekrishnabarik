@@ -14,7 +14,7 @@ spec:
     effect: "NoSchedule"
   containers:
   - name: docker
-    image: docker:latest
+    image: jdk8-windowsservercore-1809
     command:
     - cat
     tty: true
