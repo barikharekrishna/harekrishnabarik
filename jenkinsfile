@@ -20,10 +20,14 @@ spec:
   - name: dockersock
     hostPath:
       path: /var/run/docker.sock
-  tolerations:
-  - key: "node.kubernetes.io/os"
-    value: "windows"
-    effect: "NoSchedule"  
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: node.kubernetes.io/os
+            operator: In
+            values: windows   
 '''
         }
     }
