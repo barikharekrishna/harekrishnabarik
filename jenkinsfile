@@ -5,6 +5,14 @@ pipeline {
 apiVersion: v1
 kind: Pod
 spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: node.kubernetes.io/os
+            operator: In
+            values: windows
   containers:
   - name: docker
     image: docker:latest
@@ -20,14 +28,7 @@ spec:
   - name: dockersock
     hostPath:
       path: /var/run/docker.sock
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: node.kubernetes.io/os
-            operator: In
-            values: windows   
+   
 '''
         }
     }
