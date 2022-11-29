@@ -17,7 +17,7 @@ spec:
     - cat
     tty: true
   nodeSelector:
-    node.kubernetes.io/os: gke-715888-52l0 
+    node.kubernetes.io/os=windows
   tolerations:
   - key: "node.kubernetes.io/os"
     value: "windows"
