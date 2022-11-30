@@ -14,7 +14,7 @@ spec:
     effect: "NoSchedule"
   containers:
   - name: docker
-    image: 4.11-1-jdk11-nanoserver-1809
+    image: mcr.microsoft.com/windows/nanoserver:ltsc2022
     command:
     - cat
     tty: true
