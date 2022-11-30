@@ -14,7 +14,7 @@ spec:
     effect: "NoSchedule"
   containers:
   - name: docker
-    image: jenkins/inbound-agent:windowsservercore-ltsc2019
+    image: windowsservercore-ltsc2019
     command:
     - cat
     tty: true
