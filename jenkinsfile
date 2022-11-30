@@ -2,7 +2,7 @@ pipeline {
     agent {
         kubernetes {
             yaml '''
-apiVersion: v1
+apiVersion: v1 
 kind: Pod
 spec:
   nodeSelector:
@@ -14,7 +14,7 @@ spec:
     effect: "NoSchedule"
   containers:
   - name: docker
-    image: jenkins/inbound-agent:windowsservercore-1809 
+    image: jdk11-nanoserver-1809
     command:
     - cat
     tty: true
