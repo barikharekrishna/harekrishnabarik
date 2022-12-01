@@ -14,7 +14,7 @@ spec:
     effect: "NoSchedule"
   containers:
   - name: docker
-    image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
+    image: mcr.microsoft.com/windows/servercore:ltsc2022
     command:
     - cat
     tty: true
