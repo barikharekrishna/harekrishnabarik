@@ -14,12 +14,12 @@ spec:
     effect: "NoSchedule"
   containers:
   - name: jnlp
-    image: jenkins/jnlp-agent:latest-windows
+    image: mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
     command:
     - cat
     tty: true
-  - name: windows-dotnet
-    image: mcr.microsoft.com/dotnet/core/sdk:2.1
+  - name: docker
+    image: 
     securityContext:
       runAsUser: 0
     volumeMounts:
