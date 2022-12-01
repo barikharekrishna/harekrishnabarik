@@ -14,7 +14,7 @@ spec:
     effect: "NoSchedule"
   containers:
   - name: docker
-    image: jenkins/jnlp-agent:latest-windows
+    image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
     command:
     - cat
     tty: true
